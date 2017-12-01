@@ -3,8 +3,11 @@ package de.predic8.workshop.rating.dto;
 import java.math.BigDecimal;
 
 public class RatingRequest {
-	private final String customer;
-	private final BigDecimal amount;
+	private String customer;
+	private BigDecimal amount;
+
+	public RatingRequest() {
+	}
 
 	public RatingRequest(String customer, BigDecimal amount) {
 		this.customer = customer;
