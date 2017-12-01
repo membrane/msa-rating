@@ -3,7 +3,6 @@ package de.predic8.workshop.rating.rest;
 import de.predic8.workshop.rating.dto.RatingRequest;
 import de.predic8.workshop.rating.error.AmountTooHighException;
 import de.predic8.workshop.rating.error.LimitReachedException;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,10 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 import java.math.BigDecimal;
 import java.util.Map;
 
-@RequiredArgsConstructor
 @RestController
 public class RatingRestController {
 	private final Map<String, BigDecimal> payments;
+
+	public RatingRestController(Map<String, BigDecimal> payments) {
+		this.payments = payments;
+	}
 
 	@PostMapping("/ratings")
 	public ResponseEntity<Void> rating(@RequestBody RatingRequest ratingRequest) {
