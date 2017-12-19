@@ -1,4 +1,4 @@
-package de.predic8.workshop.rating.rest;
+package de.predic8.workshop.rating.web;
 
 import de.predic8.workshop.rating.dto.RatingRequest;
 import de.predic8.workshop.rating.error.AmountTooHighException;
